@@ -93,4 +93,6 @@ for _ in range(1000):
         
         weights += eta * dot(newImageArray[np.newaxis].T, deltaj)
         hidden_weights += eta * dot(array(yj)[np.newaxis].T, deltak)
-        print zk
+        print weights
+        print '----------------------------------------------'
+        print hidden_weights

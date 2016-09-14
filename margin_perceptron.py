@@ -34,10 +34,12 @@ training_data = [
 
 new_training_data = normalize(training_data, 1)
 weights = random.rand(3)
-eta = 0.2
+eta = 0.02
 n = 100000
 k = 0
 margin = 0.5
+
+print weights
 
 for i in range(n):
     value = (k + 1) % len(training_data)
@@ -45,6 +47,8 @@ for i in range(n):
     if dot(weights.T, yk) < margin:
         weights += yk
     k += 1
+
+print weights
 
 final_data = []
 for value, _ in training_data:
@@ -63,7 +67,7 @@ x1 = []
 y1 = []
 x2 = []
 y2 = []
-for i, j in final_data:
+for i, j in training_data:
     if j == -1:
         x1.append(i[0])
         y1.append(i[1])
